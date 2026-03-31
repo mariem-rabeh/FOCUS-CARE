@@ -276,7 +276,6 @@
           <div class="spinner"></div>
           <span>Waiting for stream…</span>
         </div>
-        <div class="posture-badge unknown" id="posture-badge">–</div>
       </div>
       <div class="conf-bar-wrap">
         <div class="conf-label">
@@ -519,11 +518,7 @@ async function poll() {
       addAlert('Connected to REST API at /results', 'info');
     }
 
-    /* Posture badge */
     const posture = (data.posture || 'unknown').toLowerCase();
-    const badge   = document.getElementById('posture-badge');
-    badge.textContent = posture.toUpperCase();
-    badge.className   = `posture-badge ${posture}`;
 
     /* Stats */
     document.getElementById('stat-posture').textContent  = posture;
